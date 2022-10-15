@@ -1,0 +1,32 @@
+var cv = null;  
+window.onload = function() {
+	document.getElementById("start").onclick = startClick;
+	document.getElementById("end").onmouseover = overEnd;
+	var boundaries = document.querySelectorAll("div#maze div.boundary");
+	for (var i = 0; i < boundaries.length; i++) {
+		boundaries[i].onmouseover = overBoundary;
+	}
+	document.body.onmousemove = overBody;   
+};
+function overBoundary(event) {
+	if (cv === false) {
+		cv = true;
+		var boundaries = document.querySelectorAll("#boundary1");
+		for (var i = 0; i < boundaries.length; i++) {
+			boundaries[i].classList.add("youlose");
+		}
+		event.stopPropagation();   
+		return false;
+	}
+}
+function startClick() {
+	cv = false;
+	var boundaries = document.querySelectorAll("div#maze div.boundary");
+	for (var i = 0; i < boundaries.length; i++) {
+		boundaries[i].classList.remove("youlose");
+	}
+}
+function overEnd() {
+	if (cv === false) {
+	}
+}

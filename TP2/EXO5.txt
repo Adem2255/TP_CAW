@@ -1,0 +1,2 @@
+Exercise 5: Write your solution and commit it in Github
+Verify your JavaScript code. Then Upload it to your Github.
